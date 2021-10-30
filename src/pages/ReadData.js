@@ -23,7 +23,7 @@ export default function ReadData() {
     labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
     datasets: [
       {
-        label: 'My First Dataset',
+        label: 'Daily Contributions',
         data: data?.map((item) => item.age),
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
@@ -44,6 +44,7 @@ export default function ReadData() {
       ) : (
         <h4>Loading...</h4>
       )}
+      <h2>Total: {data?.reduce((acc, item) => acc + parseInt(item.age), 0)}</h2>
       <hr />
       <Line data={chartData} />
     </div>
